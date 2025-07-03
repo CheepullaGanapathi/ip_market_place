@@ -1,17 +1,20 @@
 // src/App.jsx
-
-import { Outlet } from "react-router";
-import Navbar from "./components/Navbar";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";        
+import Home from "./pages/Home";         
+import Register from "./pages/Register"; 
+import Explore from "./pages/Explore"; 
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <Navbar />
-      <main className="p-6">
-        <Outlet />
-      </main>
-    </div>
-  );
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/explore" element={<Explore />} />
+      </Routes>
+  )
 }
 
 export default App;
