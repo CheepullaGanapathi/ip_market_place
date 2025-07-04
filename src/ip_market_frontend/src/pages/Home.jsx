@@ -5,10 +5,32 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    // Add your actual logout logic here if needed (clearing tokens, etc.)
+    navigate('/');
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-300 via-pink-400 to-purple-500 p-8 flex flex-col items-center justify-center text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-300 via-pink-400 to-purple-500 p-8 text-white relative overflow-hidden">
+
+      {/* Top Right Buttons */}
+      <div className="absolute top-4 right-4 flex space-x-3 z-20">
+        <button
+          onClick={() => navigate('/profile/abc-principal-id')} // Replace with dynamic principal
+          className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full shadow hover:bg-blue-500 hover:text-white transition"
+        >
+          👤 Profile
+        </button>
+        <button
+          onClick={handleLogout}
+          className="bg-white text-red-600 font-bold py-2 px-4 rounded-full shadow hover:bg-red-500 hover:text-white transition"
+        >
+          🔓 Logout
+        </button>
+      </div>
+
       {/* Hero Section */}
-      <section className="w-full max-w-5xl py-20 text-center relative z-10 animate-fade-in">
+      <section className="w-full max-w-5xl mx-auto py-20 text-center relative z-10 animate-fade-in">
         <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-xl mb-6">
           🚀 Discover, License, and Own IP on the Blockchain
         </h1>
@@ -32,7 +54,7 @@ const Home = () => {
       </section>
 
       {/* Featured IP Assets */}
-      <section className="w-full max-w-6xl px-4 py-10 bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl mt-0 animate-slide-up-fade">
+      <section className="w-full max-w-6xl mx-auto px-4 py-12 bg-white/20 backdrop-blur-xl rounded-3xl shadow-2xl mt-4 animate-slide-up-fade">
         <h2 className="text-4xl font-bold mb-8 text-white text-center">🌟 Featured IP Assets</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[1, 2, 3].map((i) => (

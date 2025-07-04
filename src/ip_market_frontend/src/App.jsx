@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register"; 
 import Explore from "./pages/Explore"; 
 import AssetDetails from "./pages/AssetDetails";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/asset/:id" element={<AssetDetails />} />
+        <Route path="/profile" element={<Profile />} />
+
 
       </Routes>
   )
